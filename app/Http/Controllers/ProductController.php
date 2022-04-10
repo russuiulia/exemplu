@@ -19,6 +19,14 @@ class ProductController extends Controller
         return view('products.index',compact('products'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
+
+    public function welcome()
+    {
+        $products = Product::latest()->paginate(5);
+    
+        return view('welcome',compact('products'))
+            ->with('i', (request()->input('page', 1) - 1) * 5);
+    }
      
     /**
      * Show the form for creating a new resource.
@@ -41,6 +49,7 @@ class ProductController extends Controller
         $request->validate([
             'name' => 'required',
             'detail' => 'required',
+            'image' => 'required',
         ]);
     
         Product::create($request->all());
@@ -83,6 +92,8 @@ class ProductController extends Controller
         $request->validate([
             'name' => 'required',
             'detail' => 'required',
+            'image' => 'required',
+            
         ]);
     
         $product->update($request->all());

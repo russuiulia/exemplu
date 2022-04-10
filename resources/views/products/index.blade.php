@@ -6,8 +6,7 @@
   <br><br>
   <div class="col-lg-12 margin-tb">
     <div class="text-center">
-      <h2>Lucrarea individuală Nr.2</h2>
-      <h6> Tema: Creare CRUD (Create, Read, Update, Delete)</h6>
+      <h2>CRUD</h2>
     </div>
 
   </div>
@@ -31,9 +30,12 @@
     <div class="col-md-4 text-center">
 
       <div class="card" style="width: 18rem;">
+       <img class="card-img-top"src="{{ $product->image }}" alt="">
         <div class="card-body">
+          
           <h5 class="card-title">{{ $product->name }}</h5>
           <p class="card-text">{{ $product->detail }}</p>
+         
           <form action="{{ route('products.destroy',$product->id) }}" method="POST">
             <a class="btn btn-outline-info" href="{{ route('products.show',$product->id) }}">Arată</a>
             <a class="btn btn-outline-primary" href="{{ route('products.edit',$product->id) }}">Editează</a>

@@ -24,6 +24,12 @@
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
+                <strong>Imagine:</strong>
+               <p>{{ $product->image }}</p> 
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
                 <strong>Descriere:</strong>
                 {{ $product->detail }}
             </div>
